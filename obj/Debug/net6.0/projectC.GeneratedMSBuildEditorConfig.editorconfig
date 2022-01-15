@@ -15,8 +15,8 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /home/rebeca/repositorios/teste/projectC
 build_property._RazorSourceGeneratorDebug = 
 
-[/home/rebeca/repositorios/teste/projectC/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+[/home/rebeca/repositorios/teste/projectC/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/rebeca/repositorios/teste/projectC/Views/Shared/Error.cshtml]
