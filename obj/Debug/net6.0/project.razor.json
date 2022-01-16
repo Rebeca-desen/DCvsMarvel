@@ -16318,6 +16318,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/rebeca/repositorios/teste/projectC/Views/Herois/Index.cshtml",
+      "TargetPath": "Views\\Herois\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/rebeca/repositorios/teste/projectC/Views/Viloes/Index.cshtml",
+      "TargetPath": "Views\\Viloes\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/rebeca/repositorios/teste/projectC/Views/Shared/Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
