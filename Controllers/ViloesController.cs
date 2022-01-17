@@ -10,7 +10,7 @@ namespace projectC.Controllers
 {
     public class ViloesController : Controller {
         //Get Viloes
-        public ActionResult Index(){
+        public IActionResult Index(){
             return View();
         }
     }

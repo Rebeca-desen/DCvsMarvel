@@ -10,7 +10,7 @@ namespace projectC.Controllers
 {
     public class HeroisController : Controller {
         //Get Herois
-        public ActionResult Index(){
+        public IActionResult Index(){
             return View();
         }
     }

@@ -1,5 +1,16 @@
-var builder = WebApplication.CreateBuilder(args);
+using Microsoft.Extensions.Options;
+using projectC.Models;
 
+var builder = WebApplication.CreateBuilder(args);
+ // requires using Microsoft.Extensions.Options
+  
+    builder.Services.Configure<HeroistoreDatabaseSettings>(
+    builder.Configuration.GetSection("HeroistoreDatabaseSettings"));
+
+    builder.Services.AddSingleton<IHeroistoreDatabaseSettings>(sp =>
+        sp.GetRequiredService<IOptions<HeroistoreDatabaseSettings>>().Value);
+
+//IServiceCollection serviceCollection = builder.Services.Configure<projectC.Models.HeroistoreDatabaseSettings>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
