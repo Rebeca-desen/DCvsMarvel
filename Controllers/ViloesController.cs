@@ -10,8 +10,12 @@ using System.Diagnostics;
 
 namespace projectC.Controllers
 {
-    public class ViloesController : Controller {
-                private readonly ViloesServices _viloesService;
+    [Route("api/[controller]")]
+    [ApiController]
+
+    public class ViloesController : Controller
+    {
+        private readonly ViloesServices _viloesService;
 
         public ViloesController(ViloesServices vilaoService)
         {
@@ -72,6 +76,6 @@ namespace projectC.Controllers
 
             return NoContent();
         }
-      
+
     }
 }

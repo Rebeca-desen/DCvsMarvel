@@ -8,71 +8,71 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 
-namespace projectC.Controllers
+namespace projectC.Controllers;
+[Route("api/[controller]")]
+[ApiController]
+public class HeroisController : Controller
 {
-    public class HeroisController : Controller
+    //Get Herois
+    private readonly HeroisServices _heroiService;
+
+    public HeroisController(HeroisServices heroiService)
     {
-        //Get Herois
-        private readonly HeroisServices _heroiService;
+        _heroiService = heroiService;
+    }
 
-        public HeroisController(HeroisServices heroiService)
+    [HttpGet]
+    public ActionResult<List<HeroisDCMarvel>> Get() =>
+        _heroiService.Get();
+
+    [HttpGet("{id:length(24)}", Name = "GetHeroi")]
+    public ActionResult<HeroisDCMarvel> Get(string id)
+    {
+        var heroi = _heroiService.Get(id);
+
+        if (heroi == null)
         {
-            _heroiService = heroiService;
+            return NotFound();
         }
 
-        [HttpGet]
-        public ActionResult<List<HeroisDCMarvel>> Get() =>
-            _heroiService.Get();
+        return heroi;
+    }
 
-        [HttpGet("{id:length(24)}", Name = "GetHeroi")]
-        public ActionResult<HeroisDCMarvel> Get(string id)
+    [HttpPost]
+    public ActionResult<HeroisDCMarvel> Create(HeroisDCMarvel heroi)
+    {
+        _heroiService.Create(heroi);
+
+        return CreatedAtRoute("GetHeroi", new { id = heroi.Id.ToString() }, heroi);
+    }
+
+    [HttpPut("{id:length(24)}")]
+    public IActionResult Update(string id, HeroisDCMarvel heroisIn)
+    {
+        var heroi = _heroiService.Get(id);
+
+        if (heroi == null)
         {
-            var heroi = _heroiService.Get(id);
-
-            if (heroi == null)
-            {
-                return NotFound();
-            }
-
-            return heroi;
+            return NotFound();
         }
 
-        [HttpPost]
-        public ActionResult<HeroisDCMarvel> Create(HeroisDCMarvel heroi)
-        {
-            _heroiService.Create(heroi);
+        _heroiService.Update(id, heroisIn);
 
-            return CreatedAtRoute("GetHeroi", new { id = heroi.Id.ToString() }, heroi);
+        return NoContent();
+    }
+
+    [HttpDelete("{id:length(24)}")]
+    public IActionResult Delete(string id)
+    {
+        var heroi = _heroiService.Get(id);
+
+        if (heroi == null)
+        {
+            return NotFound();
         }
 
-        [HttpPut("{id:length(24)}")]
-        public IActionResult Update(string id, HeroisDCMarvel heroisIn)
-        {
-            var heroi = _heroiService.Get(id);
+        _heroiService.Remove(heroi.Id);
 
-            if (heroi == null)
-            {
-                return NotFound();
-            }
-
-            _heroiService.Update(id, heroisIn);
-
-            return NoContent();
-        }
-
-        [HttpDelete("{id:length(24)}")]
-        public IActionResult Delete(string id)
-        {
-            var heroi = _heroiService.Get(id);
-
-            if (heroi == null)
-            {
-                return NotFound();
-            }
-
-            _heroiService.Remove(heroi.Id);
-
-            return NoContent();
-        }
+        return NoContent();
     }
 }
