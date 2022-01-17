@@ -1,8 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "rah17oan5QIFmuTD5EgAaAwGxCWFnVeHbjP/l6tBaIXVex2GkKxcvO4hfLcd4enS7bFbEgfwCb7LP7CwPN8EPg==",
+  "dgSpecHash": "HsLwQLy8TtMIyjR9JSqpF5FJ6Bp0ZpyZZCYLf1BdYd2JWCh/pSmwZgI4NKfBEu1Eu704Dav7fu8t4tyxaUA8Vw==",
   "success": true,
   "projectFilePath": "/home/rebeca/repositorios/teste/projectC/projectC.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/rebeca/.nuget/packages/dnsclient/1.4.0/dnsclient.1.4.0.nupkg.sha512",
+    "/home/rebeca/.nuget/packages/mongodb.bson/2.14.0/mongodb.bson.2.14.0.nupkg.sha512",
+    "/home/rebeca/.nuget/packages/mongodb.driver/2.14.0/mongodb.driver.2.14.0.nupkg.sha512",
+    "/home/rebeca/.nuget/packages/mongodb.driver.core/2.14.0/mongodb.driver.core.2.14.0.nupkg.sha512",
+    "/home/rebeca/.nuget/packages/mongodb.libmongocrypt/1.3.0/mongodb.libmongocrypt.1.3.0.nupkg.sha512",
+    "/home/rebeca/.nuget/packages/sharpcompress/0.30.1/sharpcompress.0.30.1.nupkg.sha512",
+    "/home/rebeca/.nuget/packages/system.buffers/4.5.1/system.buffers.4.5.1.nupkg.sha512",
+    "/home/rebeca/.nuget/packages/system.runtime.compilerservices.unsafe/5.0.0/system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
