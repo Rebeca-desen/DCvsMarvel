@@ -13,6 +13,15 @@ var builder = WebApplication.CreateBuilder(args);
 
     builder.Services.AddSingleton<HeroisServices>();
 
+
+builder.Services.Configure<ViloestoreDatabaseSettings>(
+    builder.Configuration.GetSection("ViloestoreDatabaseSettings"));
+
+    builder.Services.AddSingleton<IViloestoreDatabaseSettings>(sp =>
+        sp.GetRequiredService<IOptions<ViloestoreDatabaseSettings>>().Value);
+
+    builder.Services.AddSingleton<ViloesServices>();
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

@@ -24,7 +24,7 @@ namespace projectC.Controllers
         public ActionResult<List<HeroisDCMarvel>> Get() =>
             _heroiService.Get();
 
-        [HttpGet("{id:length(24)}", Name = "GetBook")]
+        [HttpGet("{id:length(24)}", Name = "GetHeroi")]
         public ActionResult<HeroisDCMarvel> Get(string id)
         {
             var heroi = _heroiService.Get(id);
